@@ -8,6 +8,8 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class NovaTransferenciaComponent {
   @Output() aoTranferir = new EventEmitter<any>();
 
+  @Output() valoresComErro = new EventEmitter<string>();
+
   valor: number = 0;
   destino: number = 0;
 
@@ -15,10 +17,26 @@ export class NovaTransferenciaComponent {
     console.log('NovaTransferenciaComponent');
     console.log(this.valor);
     console.log(this.destino);
-    const valorEmitir = {
-      valor: this.valor,
-      destino: this.destino,
-    };
-    this.aoTranferir.emit(valorEmitir);
+    if (this.ehValido()) {
+      const valorEmitir = {
+        valor: this.valor,
+        destino: this.destino,
+      };
+      this.aoTranferir.emit(valorEmitir);
+      this.limparCampos();
+    }
+  }
+
+  private ehValido() {
+    const valido = this.valor > 0;
+    if (!valido) {
+      this.valoresComErro.emit('Informe um valor válido');
+    }
+    return valido;
+  }
+
+  limparCampos() {
+    this.valor = 0;
+    this.destino = 0;
   }
 }

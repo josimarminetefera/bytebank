@@ -8,7 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'bytebank';
 
-  transferirAppComponent($event){
+  transferencia: any;
+
+  transferirAppComponent($event) {
     console.log($event);
+    this.transferencia = $event;
+  }
+
+  exibirModalErro(mensagem) {
+    // implementação da lógica para exibir o modal
   }
 }
