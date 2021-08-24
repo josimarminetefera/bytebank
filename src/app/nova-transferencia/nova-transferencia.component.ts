@@ -18,7 +18,7 @@ export class NovaTransferenciaComponent {
     const valorEmitir = {
       valor: this.valor,
       destino: this.destino,
-    }
+    };
     this.aoTranferir.emit(valorEmitir);
   }
 }
