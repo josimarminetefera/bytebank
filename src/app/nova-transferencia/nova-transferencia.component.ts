@@ -1,13 +1,8 @@
-import { style } from "@angular/animations";
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-    selector:'nova-transferencia',
-    templateUrl:'.nova-transferencia.component.html',
-    styleUrls: ['./nova-transferencia.componenet.scss']
+  selector: 'app-nova-transferencia',
+  templateUrl: './nova-transferencia.component.html',
+  styleUrls: ['./nova-transferencia.component.scss'],
 })
-
-
-export class NovaTransferenciaComponent{
-
-}
+export class NovaTransferenciaComponent {}
