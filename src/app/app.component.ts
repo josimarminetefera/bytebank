@@ -14,8 +14,4 @@ export class AppComponent {
     console.log($event);
     this.transferencia = $event;
   }
-
-  exibirModalErro(mensagem) {
-    // implementação da lógica para exibir o modal
-  }
 }
