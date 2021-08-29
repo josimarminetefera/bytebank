@@ -1,3 +1,4 @@
+import { Transferencia } from './../models/transferencia.model';
 import { TransferenciaService } from './../services/transferencia.service';
 import { Component, Input, OnInit } from '@angular/core';
 
@@ -10,11 +11,14 @@ export class ExtratoComponent implements OnInit {
   //@Input()  SEM @Input() POIS NÃO PRECISO MAIS TRAZER ESTES DADOS PARA CA
   transferencias: any[];
 
-  constructor(private service:TransferenciaService) {}
+  constructor(private service: TransferenciaService) {}
 
   //AO INICIAR ESTE COMPONENTE
   ngOnInit(): void {
     //A LISTA DO SERVICE VAI SER TRANSFERIDA PARA O ARRAY LOCAL
-    this.transferencias = this.service.transferencias;
+    this.service.todas().subscribe((lista: Transferencia[]) => {
+      console.table(lista);
+      this.transferencias = lista;
+    });
   }
 }
