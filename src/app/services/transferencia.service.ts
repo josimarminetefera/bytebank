@@ -19,16 +19,16 @@ export class TransferenciaService {
   }
 
   //Observable É UM METODO QUE VAI RECEVER A RESOPOSTA DE ALGO
-  todas(): Observable<Transferencia[]>{
+  todas(): Observable<Transferencia[]> {
     //VAI RETORNAR DESTE GET UMA LISTA DE Transferencia
     //.get É UM METODO FUTURO
     return this.httpClient.get<Transferencia[]>(this.url);
   }
 
-  adicionar(transferencia: any) {
+  adicionar(transferencia: Transferencia): Observable<Transferencia> {
     console.log(transferencia);
     this.tratar(transferencia);
-    this.transferencias.push(transferencia);
+    return this.httpClient.post<Transferencia>(this.url, transferencia);
   }
 
   //POSSO COLOCAR AS REGRAS DE NEGOCIO AQUI
