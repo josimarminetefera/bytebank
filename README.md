@@ -1,7 +1,7 @@
 # Projeto para aprender o básico do Angular
 
 Angular: Começando com o framework.
-Para rodar tem que iniciar um web server com o arquivo \bytebank\dados\db.json atravez de 
+Para rodar tem que iniciar um web server com o arquivo `\bytebank\dados\db.json` atravéz de 
 `json-server --watch db.json`
 
 # Bytebank
